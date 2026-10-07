@@ -1,0 +1,24 @@
+.atelier-forest{position:absolute;inset:-70px -20px;z-index:-5;pointer-events:none;will-change:transform}
+.atelier-near{position:absolute;inset:-35px -10px;z-index:-2;pointer-events:none;will-change:transform}
+@media(prefers-reduced-motion:reduce){.atelier-forest,.atelier-near{transform:none!important;will-change:auto}}
+
+/* Top offsets compose with the carousel transform and the player scatter translate. */
+.expand-version .card{top:calc(49% + var(--card-rise,0px))}
+@media(prefers-reduced-motion:reduce){.expand-version .card{top:49%}}
+
+.expand-version header{translate:0 var(--title-rise,0px);will-change:translate}
+.expand-version .navigation{translate:0 var(--nav-rise,0px)}
+@media(prefers-reduced-motion:reduce){.expand-version header,.expand-version .navigation{translate:none!important}}
+
+.expand-version:not(.is-playing) .navigation,.expand-version:not(.is-playing) footer{opacity:var(--controls-visibility,1)}
+
+/* Reserve separate title, card and navigation bands at the resting position. */
+.expand-version .card{top:calc(var(--card-center,49%) + var(--card-rise,0px));height:min(var(--card-height,380px),420px);min-height:0;aspect-ratio:auto;width:min(32vw,480px)}
+.expand-version .card .media{flex-shrink:0}
+.expand-version header{top:3%;}
+@media(max-width:700px){.expand-version .card{width:min(76vw,360px)}.expand-version header .sprig{font-size:20px}.expand-version header h1{margin-bottom:8px}}
+@media(prefers-reduced-motion:reduce){.expand-version .card{top:var(--card-center,49%)}}
+
+.expand-version .scene{min-height:0}
+.expand-version .card{width:min(32vw,480px,var(--card-width-limit,480px))}
+@media(max-width:700px){.expand-version .card{width:min(76vw,360px,var(--card-width-limit,360px))}}

@@ -1,0 +1,100 @@
+.assembly-track{height:var(--assembly-height);position:relative;background:#191714}
+.assembly-pin{position:sticky;top:0;height:100svh;display:grid;place-items:center;overflow:hidden}
+.assembly-stage{position:relative;width:min(100%,calc(92svh * 1391 / 1131));aspect-ratio:1391/1131}
+.assembly-stage>figure{position:absolute;inset:0;width:100%;height:100%;opacity:0;z-index:2;will-change:opacity}
+.assembly-stage>figure>img{width:100%;height:100%;object-fit:contain}
+.assembly-art{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.assembly-piece{will-change:transform,opacity;transform-box:view-box}
+.assembly-track .motion-toggle{z-index:4}
+.back-top{z-index:20}
+@media(prefers-reduced-motion:reduce){.assembly-track{height:auto!important}.assembly-pin{position:relative;height:auto;display:block;overflow:visible}.assembly-stage{width:100%;aspect-ratio:auto}.assembly-stage>figure{position:relative;height:auto;opacity:1!important;pointer-events:auto!important}.assembly-art{display:none}}
+
+/* Whole-module depth is applied to the sticky shell, independently of assembly pieces. */
+.assembly-hero{position:relative;z-index:1}
+.assembly-hero>.exhibition{position:sticky;transform-origin:50% 70%;will-change:transform,filter}
+.assembly-track{background:transparent;margin-top:calc(-1 * var(--assembly-overlap,0px))}
+.assembly-pin{background:#191714;transform-origin:50% 70%;will-change:transform,filter;box-shadow:0 -24px 60px #0005}
+.assembly-finale{position:relative;z-index:6;margin-top:calc(-1 * var(--assembly-overlap,0px));background:#191714;box-shadow:0 -24px 60px #0005}
+@media(prefers-reduced-motion:reduce){.assembly-hero{height:auto!important}.assembly-hero>.exhibition{position:relative;top:auto!important}.assembly-track,.assembly-finale{margin-top:0}.assembly-hero>.exhibition,.assembly-pin{transform:none!important;filter:none!important;will-change:auto;box-shadow:none}}
+
+.hero-card-art{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:hidden}.hero-cards-active>#panel-0{opacity:0}.hero-card{will-change:transform}.exhibition>.tabs{z-index:3}@media(prefers-reduced-motion:reduce){.hero-card-art{display:none!important}.hero-cards-active>#panel-0{opacity:1}}
+
+.assembly-finale{height:190svh!important;min-height:1254px}.assembly-finale>iframe{position:sticky;top:0;height:100svh!important;min-height:660px}
+@media(prefers-reduced-motion:reduce){.assembly-finale{height:auto!important;min-height:0}.assembly-finale>iframe{position:relative}}
+
+/* A scroll-scrubbed cover lifts before the hero cards begin moving. */
+.assembly-hero>.exhibition{overflow:hidden}
+.opening-curtain{position:absolute;inset:0;z-index:10;display:flex;flex-direction:column;justify-content:space-between;padding:5.5% 6.5%;color:#eddbb9;background:radial-gradient(ellipse at 70% 20%,#51433366,transparent 58%),repeating-linear-gradient(92deg,#ffffff02 0 1px,transparent 1px 5px),#211f1b;box-shadow:0 24px 48px #0009;will-change:transform}
+.curtain-label{font:11px/1.5 Georgia,serif;letter-spacing:.22em;opacity:.65}
+.curtain-title{align-self:center;text-align:center}.curtain-title>span{font:clamp(12px,1.2vw,22px)/1.5 'Songti SC',serif;letter-spacing:.5em}.curtain-title h1{font:400 clamp(36px,7.5vw,132px)/1.2 'Songti SC',STSong,serif;letter-spacing:.15em;margin:20px 0 22px;padding-left:.15em}.curtain-title p{font:clamp(10px,1.1vw,18px)/1.5 'Songti SC',serif;letter-spacing:.24em;opacity:.7}.curtain-bottom{display:flex;justify-content:space-between;align-items:end;font:12px/1.5 'Songti SC',serif;letter-spacing:.16em}.curtain-bottom>span:last-child{font-size:28px}
+@media(max-width:700px){.curtain-label{font-size:7px}.curtain-title h1{margin:8px 0}.curtain-title p{margin:6px 0}.curtain-bottom{font-size:8px}.curtain-bottom>span:last-child{font-size:18px}}
+@media(prefers-reduced-motion:reduce){.opening-curtain{display:none}}
+
+/* Six alternating horizontal shutters cut through the entire cover artwork. */
+.opening-curtain{will-change:clip-path;box-shadow:none;background:linear-gradient(to bottom,#27251f 0 16.666%,#302d26 16.666% 33.333%,#26241f 33.333% 50%,#343027 50% 66.666%,#28251f 66.666% 83.333%,#302b23 83.333% 100%)}
+
+/* The intact cover leaves first; shutters belong to the interface transition behind it. */
+.opening-curtain{z-index:12;will-change:transform;background:radial-gradient(ellipse at 70% 20%,#51433366,transparent 58%),#211f1b}
+.transition-shutters{position:absolute;inset:0;z-index:11;pointer-events:none;background:linear-gradient(to bottom,#27251f 0 16.666%,#302d26 16.666% 33.333%,#26241f 33.333% 50%,#343027 50% 66.666%,#28251f 66.666% 83.333%,#302b23 83.333% 100%);will-change:clip-path}
+@media(prefers-reduced-motion:reduce){.transition-shutters{display:none}}
+
+/* The cover stays fixed; only its horizontal mask bands retract. */
+.opening-curtain{transform:none!important;will-change:clip-path}
+
+.assembly-pin{background:#0c1017}.work-particles{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}.assembly-stage{z-index:1;box-shadow:0 18px 65px #0005}
+.assembly-stage{width:min(84%,calc(86svh * 1391 / 1131))}
+@media(max-width:700px){.assembly-stage{width:92%}}
+@media(prefers-reduced-motion:reduce){.assembly-stage{width:100%}}
+
+/* Forest spores: moss-dark ambience, warm living lights rather than a star field. */
+.assembly-pin{background:radial-gradient(ellipse at 18% 65%,#233b2944,transparent 50%),radial-gradient(ellipse at 88% 30%,#37432a33,transparent 45%),#101b17}
+
+/* Existing forest artwork supplies real atmosphere behind the procedural spores. */
+.assembly-pin{background:#0c161b;isolation:isolate}
+.assembly-pin::before{content:"";position:absolute;inset:-25px;z-index:-1;pointer-events:none;background:linear-gradient(90deg,#07151850,#0b1b2a77 45%,#09181b55),url("../tea-carousel/2.jpg") center/cover;filter:blur(3px) saturate(.6) brightness(.52)}
+.assembly-pin::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse at 14% 68%,#7a9d8720,transparent 35%),radial-gradient(ellipse at 84% 24%,#7b9ab320,transparent 45%),linear-gradient(0deg,#05101188,transparent 30%,transparent 70%,#06101777)}
+.work-particles{z-index:1}.assembly-stage{z-index:2;box-shadow:0 18px 65px #0007}
+/* The scene behind the curtain resolves gently as the horizontal openings grow. */
+.exhibition>img[role=tabpanel],.exhibition>.hero-card-art{opacity:var(--hero-arrival,1);filter:blur(var(--hero-arrival-blur,0px));transform:scale(var(--hero-arrival-scale,1));transform-origin:center;will-change:opacity,filter,transform}
+.exhibition.hero-cards-active>#panel-0{opacity:0}
+.exhibition>.tabs{opacity:var(--hero-arrival,1)}
+@media(prefers-reduced-motion:reduce){.exhibition>img[role=tabpanel],.exhibition>.hero-card-art{filter:none;transform:none}.exhibition.hero-cards-active>#panel-0{opacity:1}}
+
+/* One continuous forest spans all three manuscripts; only artwork planes retreat. */
+.boards{position:relative;isolation:isolate;display:flow-root;margin-top:calc(-1 * var(--assembly-overlap,0px))}
+.boards>.assembly-track:first-of-type{margin-top:0}
+.boards>.shared-forest-track+.assembly-track{margin-top:0}
+.shared-forest-track{position:absolute;inset:0;z-index:0;pointer-events:none}
+.shared-forest{position:sticky;top:0;height:100svh;overflow:hidden;background:#0c161b;isolation:isolate}
+.shared-forest::before{content:"";position:absolute;inset:-25px;z-index:-1;background:linear-gradient(90deg,#07151850,#0b1b2a77 45%,#09181b55),url("../tea-carousel/2.jpg") center/cover;filter:blur(3px) saturate(.6) brightness(.52)}
+.shared-forest::after{content:"";position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse at 14% 68%,#7a9d8720,transparent 35%),radial-gradient(ellipse at 84% 24%,#7b9ab320,transparent 45%),linear-gradient(0deg,#05101188,transparent 30%,transparent 70%,#06101777)}
+.boards .assembly-pin{background:transparent;box-shadow:none;filter:none;transform:none;will-change:auto;isolation:auto}
+.boards .assembly-pin::before,.boards .assembly-pin::after{display:none}
+.assembly-stage{will-change:transform,filter;transform-origin:50% 70%}
+@media(prefers-reduced-motion:reduce){.boards{margin-top:0}.assembly-stage{transform:none!important;filter:none!important;will-change:auto}}
+
+.hero-menu-outgoing{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;pointer-events:none;z-index:2;will-change:transform,opacity,filter}
+
+/* Original bitmap typography and stepped borders stay fixed; only light travels. */
+.split-menu-motion>.tabs{z-index:7}
+.split-menu-motion .tab{top:calc(8.1% + var(--menu-row)*7.64%)!important;left:4.4%!important;width:23.6%!important;height:6.7%!important;z-index:2;transform:none}
+.menu-light{position:absolute;left:4.48%;top:8.18%;width:23.4%;height:6.5%;transform:translateY(calc(var(--selected-row,0)*117.54%));transition:transform .62s cubic-bezier(.22,.8,.25,1);z-index:1;pointer-events:none;filter:drop-shadow(0 0 5px #ff8a16) drop-shadow(0 0 10px #ff8a1688)}
+.menu-light svg{display:block;width:100%;height:100%}
+.menu-content-art{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:var(--hero-arrival,1);filter:blur(var(--hero-arrival-blur,0px));transform:scale(var(--hero-arrival-scale,1));transform-origin:center}
+.split-menu-motion>img[role=tabpanel]{opacity:0!important}
+.menu-element{transform-box:fill-box;will-change:transform,opacity}
+@media(prefers-reduced-motion:reduce){.menu-light{transition:none}.menu-content-art{filter:none;transform:none}.split-menu-motion>#panel-0:not([hidden]){opacity:1!important}}
+/* Match the original library scene's smaller menu without adding a bitmap panel. */
+.split-menu-motion[data-menu-scene="1"] .tab{left:2.8%!important;top:calc(9.9% + var(--menu-row)*6.7%)!important;width:20.8%!important;height:5.7%!important}
+.split-menu-motion[data-menu-scene="1"] .menu-light{left:3%;top:10.2%;width:20.5%;height:5.5%;transform:translateY(calc(var(--selected-row,0)*121.82%))}
+
+/* Local 3D disc planes: perspective is centered on each axle, not the full screenshot. */
+.disc-scene{position:absolute;inset:0;pointer-events:none;opacity:var(--hero-arrival,1);filter:blur(var(--hero-arrival-blur,0px))}
+.disc-mount{position:absolute;transform:translate(-50%,-50%);perspective:1800px;perspective-origin:50% 50%}
+.disc-plane{position:absolute;inset:0;transform-style:preserve-3d;transform-origin:50% 50%;border-radius:50%;will-change:transform,filter;background:#251306}
+.disc-plane>svg{position:absolute;inset:0;width:100%;height:100%;border-radius:50%;overflow:hidden;backface-visibility:hidden;box-shadow:inset 0 0 0 1px #ffda9480}
+.disc-plane::before{content:'';position:absolute;inset:0;border-radius:50%;background:#644021;transform:translateZ(-3px);box-shadow:0 0 0 1px #b9894a}
+.disc-sheen{position:absolute;inset:0;border-radius:50%;background:linear-gradient(90deg,#00000012,transparent 38%,#ffedc209);transform:translateZ(.3px);pointer-events:none}
+.disc-scene{z-index:1}
+
+.assembly-finale>iframe{min-height:0!important}
